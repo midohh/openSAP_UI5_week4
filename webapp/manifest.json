@@ -102,9 +102,7 @@
 				{
 					"pattern": "",
 					"name": "worklist",
-					"target": [
-						"worklist"
-					]
+					"target": "worklist"
 				},
 				{
 					"pattern": "ProductSet/{objectId}",
@@ -112,6 +110,11 @@
 					"target": [
 						"object"
 					]
+				},
+				{
+					"pattern": "AddProduct",
+					"name": "add",
+					"target": "add"
 				}
 			],
 			"targets": {
@@ -124,6 +127,11 @@
 					"viewName": "Object",
 					"viewId": "object",
 					"viewLevel": 2
+				},
+				"add": {
+					"viewName": "Add",
+					"viewId": "add",
+					"viewLevel": 3
 				},
 				"objectNotFound": {
 					"viewName": "ObjectNotFound",

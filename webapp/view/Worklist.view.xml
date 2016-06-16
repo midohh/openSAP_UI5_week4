@@ -38,6 +38,7 @@
 								<Title id="tableHeader" text="{worklistView>/worklistTableTitle}"/>
 								<ToolbarSpacer/>
 								<SearchField id="searchField" tooltip="{i18n>worklistSearchTooltip}" search="onSearch" width="auto"></SearchField>
+								<Button id="addButton" icon="sap-icon://add" press="onAdd" />
 							</Toolbar>
 						</headerToolbar>
 						<columns>

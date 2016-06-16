@@ -164,6 +164,10 @@ sap.ui.define([
 				this._oTable.getBinding("items").refresh();
 			},
 			
+			onAdd : function(){
+				this.getRouter().navTo("add");
+			},
+			
 			/*MIDO Event Handler Filter*/
 			onQuickFilter : function(oEvent){
 				var sKey = oEvent.getParameter("key"),
