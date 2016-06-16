@@ -1,0 +1,16 @@
+<core:FragmentDefinition xmlns="sap.m"
+						 xmlns:layout="sap.ui.layout"
+						 xmlns:core="sap.ui.core">
+				<ResponsivePopover  title="Dimensions" class="sapUiPopWithPadding">
+				<content>
+					<layout:Grid>
+						<layout:content>
+							<Text text="Width: {path: 'Width', formatter: '.formatter.numberUnit'} {DimUnit}" />
+							<Text text="Depth: {path: 'Depth', formatter: '.formatter.numberUnit'} {DimUnit}" />
+							<Text text="Height: {path: 'Height', formatter: '.formatter.numberUnit'} {DimUnit}" />
+							<Text text="Weight: {path: 'WeightMeasure', formatter: '.formatter.numberUnit'} {WeightUnit}" />
+						</layout:content>
+					</layout:Grid>
+				</content>
+			</ResponsivePopover>
+</core:FragmentDefinition>
