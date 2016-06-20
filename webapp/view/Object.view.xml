@@ -26,8 +26,11 @@
 				titleActive="true"
 				titlePress="onShowDetailPopover">
 				<attributes>
-					<ObjectAttribute text="{SupplierName}"/>
+					<ObjectAttribute text="{Name}"/>
 				</attributes>
+				<statuses>
+					<ObjectStatus text="{ parts : [ {path : 'WeightUnit'}, {path : 'WeightMeasure'} ], formatter : '.formatter.delivery' }"></ObjectStatus>
+				</statuses>
 			</ObjectHeader>
 			
 			<!--Start MIDO INS -->

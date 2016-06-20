@@ -24,7 +24,7 @@
 						<smartfield:SmartField id="nameField" value="{Name}"/>
 					</smartform:GroupElement>
 					<smartform:GroupElement>
-						<smartfield:SmartField id="categoryField" value="{Category}"/>
+						<smartfield:SmartField id="categoryField" value="{Category}" />
 					</smartform:GroupElement>
 					<smartform:GroupElement>
 						<smartfield:SmartField id="supplierIDField" value="{SupplierID}"/>
@@ -37,6 +37,7 @@
 			</smartform:SmartForm>
 		
 		</semantic:content>
+		
 	<semantic:saveAction>
 			<semantic:SaveAction id="save" press="onSave"/>
 		</semantic:saveAction>

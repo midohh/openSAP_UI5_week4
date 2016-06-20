@@ -40,8 +40,8 @@
     }
   ],
   "mockpreview": {
-    "mockUri": "/destinations/ES4/sap/opu/odata/IWBEP/GWSAMPLE_BASIC",
-    "metadataFilePath": "",
+    "mockUri": "/destinations/ES4/sap/opu/odata/IWBEP/GWSAMPLE_BASIC/",
+    "metadataFilePath": "localService/metadata.xml",
     "loadJSONFiles": false,
     "loadCustomRequests": false,
     "mockRequestsFilePath": ""
