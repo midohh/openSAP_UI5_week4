@@ -9,7 +9,8 @@ sap.ui.define([
 		return UIComponent.extend("opensap.manageproducts.Component", {
 
 			metadata : {
-				manifest: "json"
+				manifest: "json",
+				 handleValidation  : true
 			},
 
 			/**
@@ -30,6 +31,7 @@ sap.ui.define([
 
 				// create the views based on the url/hash
 				this.getRouter().initialize();
+				
 			},
 
 			/**

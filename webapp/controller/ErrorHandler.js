@@ -22,7 +22,7 @@ sap.ui.define([
 
 				this._oModel.attachMetadataFailed(function (oEvent) {
 					var oParams = oEvent.getParameters();
-					this._showMetadataError(oParams.response);
+					this._showMetadataError(oParams);
 				}, this);
 
 				this._oModel.attachRequestFailed(function (oEvent) {
@@ -71,11 +71,21 @@ sap.ui.define([
 					return;
 				}
 				this._bMessageOpen = true;
+				
+				
+				/*--> Start INS Mido */
+				var oResponse = JSON.parse(sDetails.responseText);
+				var oError = oResponse.error;
+				var oMessage = oError.message;
+				var oErrorDetails = { message : oMessage.value, details : "" + oMessage.value };
+				/*<-- Ende INS Mido */
+				
 				MessageBox.error(
-					this._sErrorText,
+					oMessage.value,
+					//this._sErrorText,
 					{
 						id : "serviceErrorMessageBox",
-						details: sDetails,
+					//	details: oErrorDetails.details,
 						styleClass: this._oComponent.getContentDensityClass(),
 						actions: [MessageBox.Action.CLOSE],
 						onClose: function () {
