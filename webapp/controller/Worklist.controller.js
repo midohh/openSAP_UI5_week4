@@ -4,8 +4,9 @@ sap.ui.define([
 		"opensap/manageproducts/model/formatter",
 		"sap/ui/model/Filter",
 		"sap/ui/model/FilterOperator",
-		"sap/ui/core/routing/History"
-	], function (BaseController, JSONModel, formatter, Filter, FilterOperator, History) {
+		"sap/ui/core/routing/History",
+		"sap/m/MessageToast"
+	], function (BaseController, JSONModel, formatter, Filter, FilterOperator, History,  MessageToast) {
 		"use strict";
 
 		return BaseController.extend("opensap.manageproducts.controller.Worklist", {
@@ -143,11 +144,16 @@ sap.ui.define([
 				var sId = oEvent.getSource().getBindingContext().getProperty("ProductID");
 				var sName = oEvent.getSource().getBindingContext().getProperty("Name");
 				
+				var sSuccessMessage = "Product " +  sName + " has been deleted successfully";
+				
 				var oModel = this.getModel();
 				var sPath = "/ProductSet('" + sId + "')";
 				oModel.remove(sPath,{
 							success: function(oData, oResponse){
-								new sap.m.MessageToast.show("Product " +  sName + " has been deleted successfully");
+								MessageToast.show(sSuccessMessage, {
+										closeOnBrowserNavigation : false
+								});
+								//new sap.m.MessageToast.show(sSuccessMessage);
 							},
 							error: function(oError){
 								new sap.m.MessageToast.show(oError.responseText);

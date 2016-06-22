@@ -63,7 +63,7 @@
 							<ColumnListItem type="Navigation" press="onPress">
 								<cells>
 									<ObjectIdentifier title="{ProductID}" 
-													  text="{SupplierName}"
+													  text="{Name}"
 													  titleActive="true"
 													  titlePress="onShowDetailPopover"/>
 									<Text text="{SupplierName}"/>
