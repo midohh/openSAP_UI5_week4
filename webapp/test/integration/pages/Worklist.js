@@ -1,17 +1,20 @@
 sap.ui.define([
 		"sap/ui/test/Opa5",
+		"sap/ui/test/actions/Press",
+		"sap/ui/test/actions/EnterText",
 		"sap/ui/test/matchers/AggregationLengthEquals",
 		"sap/ui/test/matchers/AggregationFilled",
 		"sap/ui/test/matchers/PropertyStrictEquals",
 		"opensap/manageproducts/test/integration/pages/Common",
 		"opensap/manageproducts/test/integration/pages/shareOptions"
-	], function(Opa5, AggregationLengthEquals, AggregationFilled, PropertyStrictEquals, Common, shareOptions) {
+	], function(Opa5, Press, EnterText, AggregationLengthEquals, AggregationFilled, PropertyStrictEquals, Common, shareOptions) {
 		"use strict";
 
 		var sViewName = "Worklist",
 			sTableId = "table",
 			sSearchFieldId = "searchField",
-			sSomethingThatCannotBeFound = "*#-Q@@||";
+			sSomethingThatCannotBeFound = "*#-Q@@||",
+			sAddButtonId = "addButton";
 
 		function allItemsInTheListContainTheSearchTerm (aControls) {
 			var oTable = aControls[0],
@@ -76,6 +79,17 @@ sap.ui.define([
 							}
 						}));
 					},
+					
+					//-->Start INS mido
+					iPressedAdd : function(){
+						return this.waitFor({
+							id : sAddButtonId,
+							viewName : sViewName,
+							actions : new Press(),
+							errorMessage : "Add Button not found"
+						});	
+					},
+					//<--Ende INS Mido
 
 					iRememberTheItemAtPosition : function (iPosition){
 						return this.waitFor(createWaitForItemAtPosition({

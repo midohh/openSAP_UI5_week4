@@ -22,6 +22,16 @@ sap.ui.define([
 				and.iShouldSeeTheRememberedObject().
 				and.theObjectViewShouldContainOnlyFormattedUnitNumbers().and.iTeardownMyAppFrame();
 		});
+		
+		opaTest("Should see the 'New Product' view after pressing the 'Add' button", function (Given, When, Then) {
+			// Arrangements
+			Given.iStartMyApp();
+			//Actions
+			When.onTheWorklistPage.iWaitUntilTheTableIsLoaded().and.iPressedAdd();
+			//Assertions
+			Then.onTheNewProductPage.iShouldSeeThePage().and.iTeardownMyAppFrame();
+		});
+
 
 	}
 );

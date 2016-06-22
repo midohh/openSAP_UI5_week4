@@ -3,13 +3,10 @@ sap.ui.define([
 	"opensap/manageproducts/controller/BaseController",
 	"sap/ui/model/json/JSONModel",
 	"sap/ui/core/routing/History",
-	"opensap/manageproducts/model/formatter"
-], function(
-	BaseController,
-	JSONModel,
-	History,
-	formatter
-) {
+	"opensap/manageproducts/model/formatter",
+	"sap/m/MessageToast"
+], function( BaseController, JSONModel, History, formatter, MessageToast ) {
+	
 	"use strict";
 
 	return BaseController.extend("opensap.manageproducts.controller.Object", {
@@ -80,6 +77,13 @@ sap.ui.define([
 				this.getView().addDependent(this._oPopover);
 			}
 			return this._oPopover;
+		},
+		
+		onSubmit: function(oEvent){
+			console.log("onSubmit");
+			var iValue = oEvent.getParameter("value");
+			var sMessage = this.getResourceBundle().getText("productRatingSuccess", [iValue]);
+			MessageToast.show(sMessage);
 		},
 
 		/* =========================================================== */

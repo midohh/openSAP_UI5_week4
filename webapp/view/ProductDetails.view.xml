@@ -1,8 +1,10 @@
-<mvc:View xmlns="sap.m"
+<mvc:View 
+		  controllerName="opensap.manageproducts.controller.Object"	
+		  xmlns="sap.m"
 		  xmlns:mvc="sap.ui.core.mvc"
-		  xmlns:form="sap.ui.layout.form">
-	
-	
+		  xmlns:form="sap.ui.layout.form"
+		  xmlns:course="opensap.manageproducts.control">
+
 			<Panel
 				class="sapUiResponsiveMargin"
 				width="auto"
@@ -19,6 +21,7 @@
 							<Label text="{i18n>productWeightLabel}"/>
 							<Text text="{= ${WeightMeasure} + ' ' + ${WeightUnit}}"/>
 						</form:content>
+						<course:ProductRate valueSubmit="onSubmit" />
 					</form:SimpleForm>
 				</content>
 			</Panel>

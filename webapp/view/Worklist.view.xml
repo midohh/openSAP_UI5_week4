@@ -51,9 +51,13 @@
 							<Column id="supplierWebAddressColumn" demandPopin="false" minScreenWidth="Tablet">
 								<Text text="{i18n>tableSupplierWebAddressColumnTitle}" id="supplierWebAddressColumnTitle"/>
 							</Column>
-							<Column id="unitNumberColumn" hAlign="End">
+							<Column id="unitNumberColumn" hAlign="End" >
 								<Text text="{i18n>tableUnitNumberColumnTitle}" id="unitNumberColumnTitle"/>
 							</Column>
+							<Column id="actionColumn" hAlign="End">
+								<Text text="{i18n>tableAction}" id="actionTitle"/>
+							</Column>
+							
 						</columns>
 						<items>
 							<ColumnListItem type="Navigation" press="onPress">
@@ -65,6 +69,7 @@
 									<Text text="{SupplierName}"/>
 									<Link text="{ToSupplier/WebAddress}" href="{ToSupplier/WebAddress}" target="_blank"/>
 									<ObjectNumber number="{ path: 'Price', formatter: '.formatter.numberUnit' }" unit="{CurrencyCode}"/>
+								    <Button id="delete" icon="sap-icon://delete" press="onDelete" />
 								</cells>
 							</ColumnListItem>
 						</items>

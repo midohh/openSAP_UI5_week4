@@ -134,7 +134,28 @@ sap.ui.define([
 			onNavBack : function() {
 				history.go(-1);
 			},
-
+			
+			
+			onDelete : function(oEvent){
+				//console.log(oEvent.getSource());
+				//console.log(oEvent.getSource().getBindingContext().getProperty("ProductID"));
+				
+				var sId = oEvent.getSource().getBindingContext().getProperty("ProductID");
+				var sName = oEvent.getSource().getBindingContext().getProperty("Name");
+				
+				var oModel = this.getModel();
+				var sPath = "/ProductSet('" + sId + "')";
+				oModel.remove(sPath,{
+							success: function(oData, oResponse){
+								new sap.m.MessageToast.show("Product " +  sName + " has been deleted successfully");
+							},
+							error: function(oError){
+								new sap.m.MessageToast.show(oError.responseText);
+							
+							}
+						});
+				
+			},
 
 			onSearch : function (oEvent) {
 				if (oEvent.getParameters().refreshButtonPressed) {
