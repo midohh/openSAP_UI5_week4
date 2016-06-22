@@ -80,7 +80,6 @@ sap.ui.define([
 		},
 		
 		onSubmit: function(oEvent){
-			console.log("onSubmit");
 			var iValue = oEvent.getParameter("value");
 			var sMessage = this.getResourceBundle().getText("productRatingSuccess", [iValue]);
 			MessageToast.show(sMessage);
